@@ -1,7 +1,9 @@
 const config = require('../../lib/config').config
 var express = require('express');
 var router = express.Router();
+let app = express();
 const ROSLIB = require('roslib');
+const moveBaseController = require('../controller/moveBase/MoveBaseController');
 
 router.get('/publishTest', (req, res, next) => {
     console.log(config.ros);
@@ -29,6 +31,7 @@ router.get('/publishTest', (req, res, next) => {
     }else{
         res.send('ros not enable')
     }
-})
+});
+app.route('/api/serTargetBase').post(moveBaseController.setTargetPose);
 
-module.exports = router
+module.exports = router;

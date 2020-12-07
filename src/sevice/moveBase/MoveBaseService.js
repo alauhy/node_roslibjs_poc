@@ -5,7 +5,7 @@ const SERVER_NAME = 'move_base';
 
 
 
-const moveBaseClient = rosUtil.clientMaker(SERVER_NAME, 'move_base_msgs/MoveBaseActionGoal');
+const moveBaseClient = çrosUtil.clientMaker(SERVER_NAME, 'move_base_msgs/MoveBaseActionGoal');
 
 
 const setTargetPoseGoal = params => {
@@ -13,7 +13,7 @@ const setTargetPoseGoal = params => {
     let pose = _getPose(params);
     /** create goal message **/
     let goalMessage = _getGoalMessage(pose);
-    /** create goal **/
+    /** create goal **/git
     let goal = _buildGoal(goalMessage);
     /** send message **/
     goal.send();

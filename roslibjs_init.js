@@ -4,7 +4,7 @@ module.exports.init = () => {
     console.log('=======init ros==========')
     const ros = new ROSLIB.Ros({
         //rosbridge
-        url : 'ws://localhost:9090'
+        url : 'ws://10.211.55.3:9090'
     });
 
     ros.on('connection', function() {
@@ -19,6 +19,5 @@ module.exports.init = () => {
         console.log('Connection to websocket server closed.');
     });
     return ros;
-}
-
+};
 

@@ -4,14 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-const rosRouter = require('./routes/ros')
-
+var indexRouter = require('./src/routes/index');
+var usersRouter = require('./src/routes/users');
+const rosRouter = require('./src/routes/ros')
+const config = require('./lib/config')
 
 
 module.exports.init = () => {
     var app = express();
+    config.init();
     console.log('App Init')
 // view engine setup
     app.set('views', path.join(__dirname, 'views'));
